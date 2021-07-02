@@ -14,7 +14,10 @@ const HomePage = () => {
       tempErrors.push("Please enter Player 2 name!");
     if (numGamesRef.current.value <= 0)
       tempErrors.push("Please enter a valid number of Games!");
-    if (player2Ref.current.value === player1Ref.current.value)
+    if (
+      player2Ref.current.value === player1Ref.current.value &&
+      player1Ref.current.value != ""
+    )
       tempErrors.push("Player 1 and Player 2 name cannot be Same");
     if (tempErrors.length > 0) {
       setErrors(tempErrors);
@@ -33,13 +36,13 @@ const HomePage = () => {
   }
 
   return (
-    <div>
-      <h1>Tic Tac Toe</h1>
+    <div class="homepage">
+      <h1 class="heading">Tic Tac Toe</h1>
       {errors.map((error) => {
-        return <div>{error}</div>;
+        return <div className="error">{error}</div>;
       })}
 
-      <div>
+      <div class="form">
         <label>Enter the name of Player 1</label>
         <input ref={player1Ref}></input>
       </div>
@@ -51,7 +54,9 @@ const HomePage = () => {
         <label>Enter the number of games</label>
         <input ref={numGamesRef} type="number"></input>
       </div>
-      <button onClick={submitDetails}>Submit</button>
+      <button onClick={submitDetails} className="homepage-button">
+        Submit
+      </button>
     </div>
   );
 };

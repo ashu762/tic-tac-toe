@@ -1,8 +1,11 @@
 import React from "react";
 import Square from "./Square";
-const Board = ({ sqaures, handleClick }) => {
+const Board = ({ sqaures, handleClick, currGame, numGames }) => {
   return (
     <div className="board">
+      <div class="curr-game">
+        Current Game: {currGame + 1} / {numGames}
+      </div>
       <div className="board-row">
         <Square value={sqaures[0]} onClick={() => handleClick(0)}></Square>
         <Square value={sqaures[1]} onClick={() => handleClick(1)}></Square>

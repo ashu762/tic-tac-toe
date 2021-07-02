@@ -17,12 +17,12 @@ const Results = ({ location }) => {
     }
   }, [location]);
   return (
-    <div>
-      <div>{`${player1} scored ${player1Win} out of ${
-        player2Win + player1Win
+    <div className="result">
+      <div className="result-score">{`${player1} scored ${player1Win} out of ${
+        player2Win + player1Win + numDraws
       }`}</div>
-      <div>{`${player2} scored ${player2Win} out of ${
-        player2Win + player1Win
+      <div className="result-score">{`${player2} scored ${player2Win} out of ${
+        player2Win + player1Win + numDraws
       }`}</div>
       <div class="salute">
         <div>{player1}</div>

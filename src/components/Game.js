@@ -78,20 +78,29 @@ const Game = ({
 
   return (
     <div>
-      {gameHistory && <Board sqaures={gameHistory} handleClick={handleClick} />}
+      {gameHistory && (
+        <Board
+          sqaures={gameHistory}
+          handleClick={handleClick}
+          currGame={currGame}
+          numGames={numGames}
+        />
+      )}
 
       {hasCompleted ? (
-        <div>
+        <div class="next-game">
           <div>{message}</div>
           <button
+            className="homepage-button"
             onClick={currGame >= numGames - 1 ? resultHandler : nextGameHandler}
           >
             {currGame >= numGames - 1 ? "See Results" : "Next game"}
           </button>
         </div>
       ) : (
-        <div>
-          Current Turn : {(currGame + step) % 2 === 0 ? player1 : player2}
+        <div class="current-turn">
+          Current Turn : {(currGame + step) % 2 === 0 ? player1 : player2} (
+          {step % 2 == 0 ? "X" : "O"})
         </div>
       )}
     </div>

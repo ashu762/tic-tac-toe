@@ -4,9 +4,15 @@
   font-size: 3rem;
 } */
 
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
 .square {
   background: rgb(243, 242, 242);
   border: 2px solid #999;
+  color: black;
   float: left;
   font-size: 3.5rem;
   height: 7rem;
@@ -24,12 +30,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30vh;
+  padding-top: 20vh;
 }
 
 .salute {
   font-size: 5rem;
+  color: rgb(0, 255, 128);
   display: flex;
+  margin-top: 3rem;
   justify-content: center;
 }
 
@@ -38,4 +46,67 @@
   margin-right: 2rem;
 }
 
-/* background-color: #282c34; */
+.app {
+  background-color: #282c34;
+  height: 100vh;
+}
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20vh;
+  color: white;
+}
+.heading {
+  font-size: 5rem;
+  margin-bottom: 3rem;
+}
+label,
+input {
+  font-size: 1.6rem;
+  margin: 1rem;
+  padding: 0rem 0.5rem;
+}
+
+.homepage-button {
+  cursor: pointer;
+  border: none;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  padding: 0.5rem 2rem;
+  background-color: rgb(29, 202, 144);
+  border-radius: 0.2rem;
+  color: white;
+}
+
+.error {
+  color: rgba(228, 30, 30, 0.925);
+  font-style: italic;
+}
+
+.current-turn,
+.next-game {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.result-score {
+  font-size: 1.5rem;
+}
+
+.result {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30vh;
+}
+
+.curr-game {
+  margin-bottom: 3rem;
+  color: white;
+  font-size: 1.5rem;
+}

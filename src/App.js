@@ -6,7 +6,7 @@ import Results from "./screens/Results";
 function App() {
   return (
     <Router>
-      <div>
+      <div className="app">
         <Route path="/" component={HomePage} exact></Route>
         <Route path="/game" component={GameScreen} exact></Route>
         <Route path="/results" component={Results} exact></Route>
