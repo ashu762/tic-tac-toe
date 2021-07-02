@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
+import { useHistory } from "react-router";
 const Results = ({ location }) => {
   const [player1, setPlayer1] = useState("");
   const [player1Win, setPlayer1Win] = useState(0);
   const [player2Win, setPlayer2Win] = useState(0);
   const [player2, setPlayer2] = useState("");
   const [numDraws, setNumDraws] = useState();
-
+  const history = useHistory();
   useEffect(() => {
     if (location.state && location.state.props) {
       setPlayer2(location.state.props.player2);
@@ -16,6 +17,10 @@ const Results = ({ location }) => {
       setNumDraws(location.state.props.numDraws);
     }
   }, [location]);
+
+  function playAgainHandler() {
+    history.push({ pathname: "/" });
+  }
   return (
     <div className="result">
       <div className="result-score">{`${player1} scored ${player1Win} out of ${
@@ -31,6 +36,9 @@ const Results = ({ location }) => {
         </div>
         <div>{player2}</div>
       </div>
+      <button className="homepage-button" onClick={playAgainHandler}>
+        Play Again!
+      </button>
     </div>
   );
 };
